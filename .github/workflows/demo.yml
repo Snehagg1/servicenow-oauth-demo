@@ -1,17 +1,20 @@
-name: serviceNow OAuth Demo
+name: ServiceNow OAuth Demo
 
 on:
-workflow_dispatch:
-inputs:
-message:
-description: Message from ServiceNow
-required: false
-default: OAuth test seuccessful
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Message from ServiceNow"
+        required: false
+        default: "OAuth test successful"
+        type: string
+
 jobs:
-demo:
-runs-on: ubuntu-lastest
-steps:
-- name: Display request
-run:|
-echo "serviceNow GitHub OAuth integration test"
-echo "Message: ${{ inputs.message }}"
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display request
+        run: |
+          echo "ServiceNow GitHub OAuth integration test"
+          echo "Message: ${{ inputs.message }}"
