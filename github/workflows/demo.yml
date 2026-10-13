@@ -1,0 +1,17 @@
+name: serviceNow OAuth Demo
+
+on:
+workflow_dispatch:
+inputs:
+message:
+description: Message from ServiceNow
+required: false
+default: OAuth test seuccessful
+jobs:
+demo:
+runs-on: ubuntu-lastest
+steps:
+- name: Display request
+run:|
+echo "serviceNow GitHub OAuth integration test"
+echo "Message: ${{ inputs.message }}"
